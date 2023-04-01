@@ -1,9 +1,11 @@
 import React from 'react'
 
-const ProductCard = () => {
+const ProductCard = ({product}) => {
   return (
     <div>
-      Product Card
+      <div>
+        <img src={product.image} alt="" />
+      </div>
     </div>
   )
 }
