@@ -1,9 +1,11 @@
 import React from 'react'
 import { BsArrowRight } from 'react-icons/bs';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
+import {addToCart} from '../redux/bazarSlice'
 const ProductCard = ({ product }) => {
   const id = product.title
+  const dispatch = useDispatch();
   const navigate = useNavigate()
   const idString = (id) => {
     return String(id).toLowerCase().split(" ").join("")
@@ -19,8 +21,11 @@ const ProductCard = ({ product }) => {
   }
 
   return (
-    <div onClick={handleDetails} className="w-full relative group">
-      <div className="w-full h-96 cursor-pointer overflow-hidden ">
+    <div className="w-full relative group">
+      <div
+        onClick={handleDetails}
+        className="w-full h-96 cursor-pointer overflow-hidden "
+      >
         <img
           className="w-full h-full group-hover:scale-110 object-cover duration-500"
           src={product.image}
@@ -39,7 +44,21 @@ const ProductCard = ({ product }) => {
               <p className="line-through text-gray-500">${product.oldPrice}</p>
               <p className="font-semibold">${product.price} </p>
             </div>
-            <p className="absolute z-20 w-[100px] text-gray-500 flex items-center gap-1 top-0 tranform -translate-x-32 group-hover:translate-x-0 transition-transform cursor-pointer duration-500">
+            <p
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    _id: product._id,
+                    title: product.title,
+                    image: product.image,
+                    price: product.price,
+                    quantity: 1,
+                    description: product.description,
+                  })
+                )
+              }
+              className="absolute z-20 w-[100px] text-gray-500 flex items-center gap-1 top-0 tranform -translate-x-32 group-hover:translate-x-0 transition-transform cursor-pointer duration-500"
+            >
               add to cart
               <span>
                 <BsArrowRight />
