@@ -9,8 +9,8 @@ import {
   RouterProvider,
   ScrollRestoration,
 } from "react-router-dom";
-import Cart from "./components/Cart";
 import Product from "./components/Product";
+import Cart from "./pages/Cart";
 
 const Layout = () => {
   return (
