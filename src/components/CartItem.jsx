@@ -7,7 +7,8 @@ import { ToastContainer, toast } from "react-toastify";
 import {
   decrementQuantity,
   incrementQuantity,
-  resetCart
+  resetCart,
+  deleteItem
 } from "../redux/bazarSlice";
 const CartItem = () => {
   const dispatch = useDispatch()
@@ -24,7 +25,12 @@ const CartItem = () => {
                 className="flex items-center justify-between gap-6 mt-6"
               >
                 <div className="flex items-center gap-2">
-                  <MdOutlineClose />
+                  <MdOutlineClose
+                    onClick={() =>
+                    dispatch(deleteItem(item._id)) & toast.error(`${item.title} is removed`)
+                    }
+                  className='text-xl text-gray-600 hover:text-red-600 cursor-pointer duration-300'
+                  />
                   <img
                     className="w-32 h-32 object-cover"
                     src={item.image}
