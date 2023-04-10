@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     setProducts(data.data);
   }, [data])
-  console.log(products)
+ 
   return (
     <div>
       <Banner />
