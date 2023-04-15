@@ -12,6 +12,7 @@ import {
 import Product from "./components/Product";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
+import CheckoutSuccess from "./components/CheckoutSuccess";
 
 const Layout = () => {
   return (
@@ -32,24 +33,27 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: productsData
+        loader: productsData,
       },
       {
         path: "/product/:id",
-        element: <Product/>
+        element: <Product />,
       },
       {
         path: "/cart",
-        element:<Cart/>,
+        element: <Cart />,
       },
       {
         path: "/login",
-        element: <Login/>
-      }
-    ]
-    
-  }
-])
+        element: <Login />,
+      },
+      {
+        path: "/checkout-success",
+        element: <CheckoutSuccess/>
+      },
+    ],
+  },
+]);
 function App() {
   return (
     <div className="font-bodyFont">

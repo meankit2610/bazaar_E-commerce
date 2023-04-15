@@ -2,18 +2,30 @@ import React, { useEffect, useState } from 'react'
 import CartItem from '../components/CartItem'
 import { useSelector } from 'react-redux';
 import { ToastContainer, toast } from "react-toastify";
-import StripeCheckout from 'react-stripe-checkout';
+// import StripeCheckout from 'react-stripe-checkout';
 import axios from "axios"
 
 const Cart = () => {
   const productData = useSelector((state) => state.bazar.productData)
   const userInfo = useSelector((state) => state.bazar.userInfo)
-  const [payNow, setPayNow] = useState(false)
+  // const [payNow, setPayNow] = useState(false)
   const [totalAmnt, setTotalAmnt] = useState("")
-
+ console.log(productData, userInfo);
   const handleCheckout = () => {
     if (userInfo) {
-      setPayNow(true)
+      // setPayNow(true)
+     
+      axios
+        .post("https://bazaar-e-commerce.vercel.app/create-checkout-session", {
+          productData,
+          userId: userInfo._id,
+        })
+        .then((response) => {
+          if (response.data.url) {
+            window.location.href = response.data.url;
+          }
+        })
+        .catch((err) => console.log(err.message));
     } else {
       toast.error("Please Sign in to Checkout")
     }
@@ -27,12 +39,12 @@ const Cart = () => {
     setTotalAmnt(price.toFixed(2))
   }, [productData])
   
-  const payment = async (token) => {
-    await axios.post("http://localhost:8000/pay", {
-      amount: totalAmnt * 100,
-      token:token,
-    })
-  }
+  // const payment = async (token) => {
+  //   await axios.post("http://localhost:8000/pay", {
+  //     amount: totalAmnt * 100,
+  //     token:token,
+  //   })
+  // }
   return (
     <div>
       <img
@@ -66,10 +78,10 @@ const Cart = () => {
           >
             proceed to checkout
           </button>
-          {payNow && (
+          {/* {payNow && (
             <div className="w-full mt-6 flex items-center justify-center">
               <StripeCheckout
-                stripeKey="pk_test_51MvNlRSDyKElSbr8Kf822Dqj6hSv3L7nv8SLk9aZOZTxrzsUYxInwffEea3eHbXoCGbmaNoxGgkmN7qX4BzpaxIs00XkYMYdPg"
+                stripeKey="pk_test_51MvNlRSDyKElSbr8Kf822Dqj6hSv3L7nv8SLk9aZOZTxrzsUYxInwffEea3eHbXoCGbmaNoxGgkmN7qX4BzpaxIs00XkYMYdPg b v"
                 name="Bazaar Online Shopping"
                 amount={totalAmnt * 100}
                 label="Pay To Bazaar"
@@ -78,7 +90,7 @@ const Cart = () => {
                 email={userInfo.email}
               />
             </div>
-          )}
+          )} */}
         </div>
       </div>
       <ToastContainer
