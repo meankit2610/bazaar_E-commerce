@@ -16,10 +16,13 @@ const Cart = () => {
       // setPayNow(true)
      
       axios
-        .post("https://bazaar-e-commerce.vercel.app/create-checkout-session", {
-          productData,
-          userId: userInfo._id,
-        })
+        .post(
+          "https://teal-brainy-leopard.cyclic.app/create-checkout-session",
+          {
+            productData,
+            userId: userInfo._id,
+          }
+        )
         .then((response) => {
           if (response.data.url) {
             window.location.href = response.data.url;
