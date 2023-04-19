@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Bazaar-Ecommerce-Website
+This ecommerce project is a web-based platform that allows users to browse and purchase products online. It typically includes features such as a product catalog, shopping cart, checkout process, and payment integration. Users can create accounts to store their shipping and billing information. The goal of an ecommerce project is to provide a seamless and secure online shopping experience for customers .
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Link of Project-: https://bazaar-e-commerce.vercel.app/
+## Landing Page
+* It consist of Header With Links of Diffrent Pages
+* It has Slider which shows some informations about diffrent products
+* Below there are product listed from where you can go to Individual product
+![2023-04-19](https://user-images.githubusercontent.com/87632087/232953600-347080e5-c6e8-42d0-970d-e1a933d34a36.png)
+## Products
+![2023-04-19 (1)](https://user-images.githubusercontent.com/87632087/232954223-cd52d28f-3833-433e-94bc-8e63c89b2ab9.png)
 
-## Available Scripts
+## Cart Page
+* It has all the product which is been Added by the user 
+* It persist the data of the cart like the product and Quantity even if user close the tab
+* In this page it also shows the Total Amount & proceed to checkout Button
+* Checkout will only happen when user is signed-in by Google Authentication 
+![2023-04-19 (3)](https://user-images.githubusercontent.com/87632087/232954706-7004e517-c763-4c20-985f-ba5787a6b6fa.png)
 
-In the project directory, you can run:
+## Chekout Page By Stripe
+* This Page is made by the integration of Stripe Payment Gateway
+* In this Page All the cart Items with its total price shown on the Left side
+* Usaer information should be filled on the Right side
+* After entering All the required Information user can checkout
+![2023-04-19 (4)](https://user-images.githubusercontent.com/87632087/232958732-1be50f41-9f9f-4b71-9d86-2f6960ff271d.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
